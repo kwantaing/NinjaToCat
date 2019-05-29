@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Ninja to Cat</title>
+</head>
+<body>
+    <img src="img/cat0.png" alt="" class='puzzle'>
+    <img src="img/ninja1.png" alt="" class='puzzle'>
+    <img src="img/cat2.png" alt="" class='puzzle'>
+    <img src="img/ninja3.png" alt="" class='puzzle'>
+    <img src="img/cat4.png" alt="" class='puzzle'>
+</body>
+<script>
+    $('.puzzle').on("click",function(){
+        var CatorNinja = randString();
+        var picNum = randNum();
+        var changeString = "img/"+CatorNinja+picNum;
+        $(this).attr('src',changeString);
+        console.log(changeString);
+    })
+    function randString(){
+        var Cat_Ninja = ["cat","ninja"];
+        var rand = (Math.floor(Math.random()*Math.floor(2)));
+        console.log("Cat_Ninja"+rand);
+        return Cat_Ninja[rand];
+    }
+    function randNum(){
+        var rand = Math.floor(Math.random()*Math.floor(5));
+        console.log("Num="+rand);
+        return rand+".png";
+    }
+</script>
+</html>
